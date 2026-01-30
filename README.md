@@ -1,29 +1,34 @@
-# 🏛️ Arsip Swarnadwipa: Jejak Sumatera
+# 🗺️ SumateraJalan - CMS Warisan Swarnadwipa
 
-**Arsip Swarnadwipa** adalah platform digital berbasis web yang didedikasikan untuk mendokumentasikan dan mempromosikan kekayaan warisan leluhur Pulau Sumatera, mulai dari destinasi wisata, kuliner autentik, hingga seni budaya.
+**SumateraJalan** adalah platform manajemen konten (CMS) berbasis web yang dirancang untuk mendokumentasikan kekayaan destinasi, kuliner, dan budaya di Pulau Sumatera. Dibangun dengan fokus pada performa dan desain yang modern serta responsif.
 
 ## 🚀 Fitur Utama
-
-- **Eksplorasi Destinasi**: Pencarian tempat wisata berdasarkan wilayah provinsi dan kategori (Alam, Sejarah, Religi, dll).
-- **Galeri Kuliner**: Katalog makanan dan minuman khas Sumatera dengan filter status Halal/Non-Halal.
-- **Warisan Budaya**: Dokumentasi tarian, upacara adat, pakaian, dan alat musik tradisional.
-- **Filter & Search Modern**: Sistem filter dinamis yang *user-friendly* dan *sticky toolbar* untuk kemudahan navigasi.
-- **Desain Responsif**: Antarmuka yang optimal untuk perangkat mobile maupun desktop menggunakan Tailwind CSS.
+* **Manajemen Destinasi**: Kelola lokasi wisata populer di Sumatera.
+* **Arsip Kuliner**: Dokumentasi masakan khas beserta kategori wilayahnya.
+* **Warisan Budaya**: Inventarisasi seni, tradisi, dan sejarah budaya.
+* **Admin Control Center**: Dashboard eksklusif untuk admin dengan autentikasi aman.
+* **UI/UX Modern**: Antarmuka berbasis Tailwind CSS dengan desain high-contrast.
 
 ## 🛠️ Teknologi yang Digunakan
+* **Bahasa**: PHP 8.x
+* **Database**: MySQL/MariaDB
+* **Styling**: Tailwind CSS (via CDN)
+* **Library**: PDO (PHP Data Objects) untuk koneksi database yang aman.
 
-- **Frontend**: [Tailwind CSS](https://tailwindcss.com/) (Styling), HTML5, JavaScript.
-- **Backend**: PHP 8.x (Native/PDO).
-- **Database**: MySQL / MariaDB.
-- **Design Pattern**: Monolithic Architecture dengan pemisahan komponen (includes/header & footer).
-
-## 📂 Struktur Folder Utama
-
+## 📦 Struktur Folder
 ```text
-├── assets/             # Gambar, CSS, dan file statis lainnya
-├── config/             # Konfigurasi database (database.php)
-├── includes/           # Komponen layout (header.php, footer.php)
-├── eksplor.php         # Halaman eksplorasi destinasi wisata
-├── kuliner.php         # Halaman katalog kuliner
-├── budaya.php          # Halaman warisan budaya
-└── detail.php          # Halaman detail masing-masing konten
+SumateraJalan/
+├── admin/               # Folder khusus manajemen admin
+│   ├── lokasi_kelola.php
+│   ├── kuliner_kelola.php
+│   └── budaya_kelola.php
+├── assets/              # Media (Gambar, Icons, CSS)
+│   └── uploads/         # Folder penyimpanan foto yang diunggah
+├── config/              # Konfigurasi sistem
+│   └── database.php     # Koneksi PDO
+├── includes/            # Komponen reusable (Navbar, Footer)
+│   └── admin_nav.php
+├── index.php            # Halaman utama (Public)
+├── login.php            # Halaman masuk admin
+├── register.php         # Halaman pendaftaran admin baru
+└── logout.php           # Proses penghapusan sesi

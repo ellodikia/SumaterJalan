@@ -32,21 +32,21 @@ include 'includes/header.php';
 ?>
 
 <main class="bg-white min-h-screen pb-20">
-    <section class="bg-slate-900 py-20 relative overflow-hidden">
+    <section class="bg-slate-900 py-12 md:py-20 relative overflow-hidden">
         <div class="absolute inset-0 opacity-10">
             <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/batik-fractal.png')]"></div>
         </div>
         <div class="container mx-auto px-6 relative z-10">
-            <h1 class="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter mb-4">
+            <h1 class="text-4xl sm:text-5xl md:text-7xl font-black text-white uppercase tracking-tighter mb-4">
                 Eksplorasi <span class="text-red-700">Sumatera</span>
             </h1>
-            <p class="text-slate-400 font-bold uppercase tracking-[0.4em] text-xs border-l-4 border-red-700 pl-4">
+            <p class="text-slate-400 font-bold uppercase tracking-[0.2em] md:tracking-[0.4em] text-[10px] md:text-xs border-l-4 border-red-700 pl-4">
                 Temukan Keajaiban di Setiap Sudut Swarnadwipa
             </p>
         </div>
     </section>
 
-    <section class="sticky top-0 z-40 bg-white border-b border-slate-100 shadow-sm">
+    <section class="md:sticky md:top-0 z-40 bg-white border-b border-slate-100 shadow-sm">
         <div class="container mx-auto px-6 py-6">
             <form action="" method="GET" class="flex flex-col lg:flex-row gap-4 items-end">
                 <div class="w-full lg:flex-1 space-y-2">
@@ -73,60 +73,62 @@ include 'includes/header.php';
                     </select>
                 </div>
 
-                <button type="submit" class="w-full lg:w-auto bg-red-700 text-white px-10 py-3.5 font-black uppercase tracking-widest text-[10px] hover:bg-slate-900 transition">
-                    Terapkan
-                </button>
-                
-                <?php if(!empty($filter_provinsi) || !empty($filter_kategori)): ?>
-                    <a href="eksplor.php" class="w-full lg:w-auto text-center bg-slate-100 text-slate-400 px-6 py-3.5 font-black uppercase tracking-widest text-[10px] hover:text-red-700 transition">
-                        Reset
-                    </a>
-                <?php endif; ?>
+                <div class="flex flex-col sm:flex-row w-full lg:w-auto gap-4">
+                    <button type="submit" class="flex-1 lg:w-auto bg-red-700 text-white px-10 py-3.5 font-black uppercase tracking-widest text-[10px] hover:bg-slate-900 transition">
+                        Terapkan
+                    </button>
+                    
+                    <?php if(!empty($filter_provinsi) || !empty($filter_kategori)): ?>
+                        <a href="eksplor.php" class="flex-1 lg:w-auto text-center bg-slate-100 text-slate-400 px-6 py-3.5 font-black uppercase tracking-widest text-[10px] hover:text-red-700 transition">
+                            Reset
+                        </a>
+                    <?php endif; ?>
+                </div>
             </form>
         </div>
     </section>
 
-    <section class="container mx-auto px-6 py-16">
+    <section class="container mx-auto px-6 py-12 md:py-16">
         <?php if(empty($locations)): ?>
-            <div class="text-center py-32 border-4 border-dashed border-slate-50">
-                <p class="text-slate-300 font-black uppercase tracking-[0.5em] text-sm italic">Jejak Destinasi Tidak Ditemukan</p>
+            <div class="text-center py-20 md:py-32 border-4 border-dashed border-slate-50">
+                <p class="text-slate-300 font-black uppercase tracking-[0.3em] md:tracking-[0.5em] text-xs md:text-sm italic">Jejak Destinasi Tidak Ditemukan</p>
                 <a href="eksplor.php" class="inline-block mt-8 text-red-700 font-black border-b-2 border-red-700 pb-1 uppercase text-[10px] tracking-widest hover:text-slate-900 transition">Tampilkan Semua</a>
             </div>
         <?php else: ?>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
-    <?php foreach($locations as $loc): ?>
-        <article class="group flex flex-col h-full">
-            <div class="relative aspect-square overflow-hidden mb-6 bg-slate-100 shadow-sm">
-                <div class="absolute top-0 left-0 z-20">
-                    <span class="bg-red-700 text-white px-4 py-2 text-[9px] font-black uppercase tracking-widest inline-block">
-                        <?= $loc['nama_kategori'] ?>
-                    </span>
-                </div>
-                <img src="assets/uploads/<?= $loc['foto_utama'] ?>" 
-                     class="w-full h-full object-cover transition duration-1000 group-hover:scale-110" 
-                     alt="<?= $loc['nama_tempat'] ?>">
-                <a href="detail.php?slug=<?= $loc['slug'] ?>" class="absolute inset-0 z-30"></a>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12 md:gap-x-8 md:gap-y-16">
+                <?php foreach($locations as $loc): ?>
+                    <article class="group flex flex-col h-full">
+                        <div class="relative aspect-video sm:aspect-square overflow-hidden mb-4 md:mb-6 bg-slate-100 shadow-sm">
+                            <div class="absolute top-0 left-0 z-20">
+                                <span class="bg-red-700 text-white px-3 py-1.5 md:px-4 md:py-2 text-[8px] md:text-[9px] font-black uppercase tracking-widest inline-block">
+                                    <?= $loc['nama_kategori'] ?>
+                                </span>
+                            </div>
+                            <img src="assets/uploads/<?= $loc['foto_utama'] ?>" 
+                                 class="w-full h-full object-cover transition duration-1000 group-hover:scale-110" 
+                                 alt="<?= $loc['nama_tempat'] ?>">
+                            <a href="detail.php?slug=<?= $loc['slug'] ?>" class="absolute inset-0 z-30"></a>
+                        </div>
+                        <div class="space-y-3 md:space-y-4 flex flex-col flex-grow">
+                            <div class="flex items-center gap-2">
+                                <span class="text-[9px] md:text-[10px] font-black uppercase tracking-widest text-amber-600"><?= $loc['nama_provinsi'] ?></span>
+                                <div class="h-px flex-1 bg-slate-100"></div>
+                            </div>
+                            <h3 class="text-xl md:text-2xl font-black uppercase tracking-tighter text-slate-900 leading-tight group-hover:text-red-700 transition duration-300">
+                                <?= $loc['nama_tempat'] ?>
+                            </h3>
+                            <p class="text-slate-500 text-xs md:text-sm leading-relaxed line-clamp-3 font-light italic flex-grow">
+                                "<?= strip_tags($loc['deskripsi']) ?>"
+                            </p>
+                            <div class="pt-4 border-t border-slate-50">
+                                <a href="detail.php?slug=<?= $loc['slug'] ?>" class="inline-block text-[9px] md:text-[10px] font-black uppercase tracking-widest text-slate-900 border-b-2 border-red-700 pb-1 hover:text-red-700 transition">
+                                    Lihat Jejak Selengkapnya →
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                <?php endforeach; ?>
             </div>
-            <div class="space-y-4 flex flex-col flex-grow">
-                <div class="flex items-center gap-2">
-                    <span class="text-[10px] font-black uppercase tracking-widest text-amber-600"><?= $loc['nama_provinsi'] ?></span>
-                    <div class="h-px flex-1 bg-slate-100"></div>
-                </div>
-                <h3 class="text-2xl font-black uppercase tracking-tighter text-slate-900 leading-tight group-hover:text-red-700 transition duration-300">
-                    <?= $loc['nama_tempat'] ?>
-                </h3>
-                <p class="text-slate-500 text-sm leading-relaxed line-clamp-3 font-light italic flex-grow">
-                    "<?= strip_tags($loc['deskripsi']) ?>"
-                </p>
-                <div class="pt-4 border-t border-slate-50">
-                    <a href="detail.php?slug=<?= $loc['slug'] ?>" class="inline-block text-[10px] font-black uppercase tracking-widest text-slate-900 border-b-2 border-red-700 pb-1 hover:text-red-700 transition">
-                        Lihat Jejak Selengkapnya →
-                    </a>
-                </div>
-            </div>
-        </article>
-    <?php endforeach; ?>
-</div>
         <?php endif; ?>
     </section>
 </main>

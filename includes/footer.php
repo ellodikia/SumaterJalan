@@ -1,42 +1,47 @@
-<footer class="bg-[#1a1a1a] text-slate-400 py-16 border-t border-white/5">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12 text-center md:text-left">
-                <div>
-                    <a href="index.php" class="text-2xl font-black text-white uppercase mb-4 block">Sumatera<span class="text-amber-500">Jalan</span></a>
-                    <p class="text-sm leading-relaxed italic">
-                        Platform dokumentasi keindahan alam dan budaya Pulau Sumatera. Menelusuri sejarah dari ujung Aceh hingga Lampung.
-                    </p>
-                </div>
-                
-                <div class="flex flex-col space-y-3 uppercase text-[10px] font-bold tracking-widest">
-                    <span class="text-white mb-2 text-xs">Navigasi</span>
-                    <a href="index.php" class="hover:text-amber-500 transition">Beranda</a>
-                    <a href="eksplor.php" class="hover:text-amber-500 transition">Eksplorasi</a>
-                    <a href="#" class="hover:text-amber-500 transition">Galeri Budaya</a>
-                </div>
-
-                <div>
-                    <span class="text-white mb-4 text-xs font-bold uppercase tracking-widest block">Terhubung Dengan Kami</span>
-                    <div class="flex justify-center md:justify-start gap-4">
-                        <div class="h-10 w-10 bg-white/5 rounded-full border border-white/10 flex items-center justify-center hover:bg-red-700 hover:border-red-700 transition cursor-pointer">
-                            <span class="text-white text-xs">IG</span>
-                        </div>
-                        <div class="h-10 w-10 bg-white/5 rounded-full border border-white/10 flex items-center justify-center hover:bg-red-700 hover:border-red-700 transition cursor-pointer">
-                            <span class="text-white text-xs">FB</span>
-                        </div>
-                        <div class="h-10 w-10 bg-white/5 rounded-full border border-white/10 flex items-center justify-center hover:bg-red-700 hover:border-red-700 transition cursor-pointer">
-                            <span class="text-white text-xs">YT</span>
+<footer class="bg-slate-950 border-t border-white/5 py-12 mt-20 relative overflow-hidden">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-amber-500/50 to-transparent"></div>
+    
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-10">
+            
+            <div class="text-center md:text-left">
+                <div class="flex items-center justify-center md:justify-start gap-4 mb-4">
+                    <div class="w-10 h-10 bg-red-700 rotate-45 flex items-center justify-center shadow-lg shadow-red-900/40 border border-white/10">
+                        <div class="-rotate-45">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path>
+                            </svg>
                         </div>
                     </div>
+                    <span class="font-black text-2xl tracking-tighter text-white uppercase">
+                        Sumatera<span class="text-amber-500">Jalan</span>
+                    </span>
                 </div>
-            </div>
-
-            <div class="pt-8 border-t border-white/5 text-center">
-                <p class="text-[10px] uppercase tracking-[0.3em] font-medium">
-                    &copy; <?= date('Y'); ?> SumateraJalan. Dibuat dengan semangat <span class="text-red-600 font-bold">Bhineka Tunggal Ika</span>.
+                <p class="text-slate-500 text-[10px] uppercase tracking-[0.3em] font-bold">
+                    &copy; <?= date('Y'); ?> SUMATERAJALAN &bull; Warisan Swarnadwipa
                 </p>
             </div>
+
+            <div class="text-center md:text-right">
+                <p class="text-slate-500 text-[10px] uppercase tracking-[0.2em] mb-2 font-bold opacity-60">Engineered By</p>
+                <a href="http://ellodikia.ct.ws" target="_blank" class="group flex items-center justify-center md:justify-end gap-3 text-slate-300 hover:text-amber-500 transition-all duration-500">
+                    <div class="flex flex-col items-end leading-none">
+                        <span class="font-black text-lg tracking-tighter uppercase group-hover:tracking-normal transition-all">ELLODIKIA</span>
+                    </div>
+                    
+                </a>
+            </div>
+
         </div>
-    </footer>
-</body>
-</html>
+
+        <div class="mt-12 flex items-center gap-4">
+            <div class="h-px flex-1 bg-gradient-to-r from-transparent to-slate-800"></div>
+            <div class="flex gap-2">
+                <div class="w-1 h-1 rounded-full bg-red-700"></div>
+                <div class="w-1 h-1 rounded-full bg-amber-500"></div>
+                <div class="w-1 h-1 rounded-full bg-red-700"></div>
+            </div>
+            <div class="h-px flex-1 bg-gradient-to-l from-transparent to-slate-800"></div>
+        </div>
+    </div>
+</footer>
