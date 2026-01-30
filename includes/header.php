@@ -5,9 +5,12 @@ $current_page = basename($_SERVER['PHP_SELF']);
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="for_sumaterajalan/logo.png" type="image/png/jpeg" />
+    <link rel="icon" href="for_sumaterajalan/logo.png" type="image/png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SumateraJalan</title>
+    <meta name="description" content="Eksplorasi Tak Terbatas di Pulau Emas. Destinasi, Kuliner, dan Budaya Sumatera Terlengkap.">
+    <meta name="keywords" content="SumateraJalan, wisata sumatera, destinasi sumatera, kuliner khas sumatera, budaya sumatera, swarnadwipa">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
@@ -21,9 +24,13 @@ $current_page = basename($_SERVER['PHP_SELF']);
         #mobile-menu {
             transition: all 0.3s ease-in-out;
             max-height: 0;
-            overflow: hidden;
+            opacity: 0;
+            pointer-events: none; 
         }
         #mobile-menu.open {
+            max-height: 500px; 
+            opacity: 1;
+            pointer-events: auto;
             border-bottom: 1px solid rgba(255,255,255,0.1);
         }
     </style>
@@ -55,7 +62,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                     Admin Panel
                 </a>
 
-                <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+                <button id="menu-btn" class="md:hidden text-white focus:outline-none p-2">
                     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                     </svg>
@@ -65,20 +72,23 @@ $current_page = basename($_SERVER['PHP_SELF']);
 
         <div id="mobile-menu" class="md:hidden bg-neutral-900 px-6">
             <div class="flex flex-col space-y-4 py-6 font-bold text-xs uppercase tracking-widest">
-                <a href="index.php" class="<?= ($current_page == 'index.php') ? 'text-amber-500' : 'hover:text-amber-500 transition' ?>">
+                <a href="index.php" class="<?= ($current_page == 'index.php') ? 'text-amber-500' : 'text-slate-300' ?>">
                     Beranda
                 </a>
-                <a href="eksplor.php" class="<?= ($current_page == 'eksplor.php' || $current_page == 'detail.php' || $current_page == 'pencarian.php') ? 'text-amber-500' : 'hover:text-amber-500 transition' ?>">
+                <a href="eksplor.php" class="<?= ($current_page == 'eksplor.php' || $current_page == 'detail.php') ? 'text-amber-500' : 'text-slate-300' ?>">
                     Destinasi
                 </a>
-                <a href="kuliner.php" class="<?= ($current_page == 'kuliner.php') ? 'text-amber-500' : 'hover:text-amber-500 transition' ?>">
+                <a href="kuliner.php" class="<?= ($current_page == 'kuliner.php') ? 'text-amber-500' : 'text-slate-300' ?>">
                     Kuliner
                 </a>
-                <a href="budaya.php" class="<?= ($current_page == 'budaya.php') ? 'text-amber-500' : 'hover:text-amber-500 transition' ?>">
+                <a href="budaya.php" class="<?= ($current_page == 'budaya.php') ? 'text-amber-500' : 'text-slate-300' ?>">
                     Budaya
                 </a>
                 <hr class="border-white/10">
-                <a href="login.php" class="text-red-500 hover:text-red-400 transition">
+                <a href="login.php" class="text-red-500 flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path>
+                    </svg>
                     Admin Panel
                 </a>
             </div>
@@ -94,7 +104,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
             const isOpen = mobileMenu.classList.toggle('open');
             
             if (isOpen) {
-                menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+                    menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
             } else {
                 menuIcon.setAttribute('d', 'M4 6h16M4 12h16m-7 6h7');
             }
