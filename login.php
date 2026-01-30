@@ -98,11 +98,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </form>
         </div>
 
-        <div class="mt-10 text-center">
-            <p class="text-[10px] font-bold text-slate-600 uppercase tracking-[0.3em]">
-                &copy; 2026 SumateraJalan • Secure System
-            </p>
-        </div>
+        
+        <?php include 'includes/footer.php'; ?>
     </div>
 
 </body>

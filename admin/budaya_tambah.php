@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Tambah Budaya - Admin SumateraJalan</title>
 </head>
-<body class="bg-slate-50 pb-20">
+<body class="bg-slate-50">
     <?php include '../includes/admin_nav.php'; ?>
 
     <main class="container mx-auto px-4 md:px-6 max-w-4xl">
@@ -107,6 +107,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </form>
         </div>
     </main>
+    <?php include '../includes/footer.php'; ?>
 
     <script>
         fotoInput.onchange = evt => {

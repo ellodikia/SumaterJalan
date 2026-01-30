@@ -69,4 +69,3 @@ include 'includes/header.php';
         <?php endforeach; ?>
     </div>
 </main>
-<?php include 'includes/footer.php'; ?>

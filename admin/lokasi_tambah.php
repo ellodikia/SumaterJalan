@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Tambah Lokasi - Admin SumateraJalan</title>
 </head>
-<body class="bg-slate-50 pb-20">
+<body class="bg-slate-50">
     
     <?php include '../includes/admin_nav.php'; ?>
 
@@ -131,12 +131,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </form>
         </div>
     </main>
-
+    <?php include '../includes/footer.php'; ?>
+    
     <script>
         const fotoInput = document.getElementById('fotoInput');
         const previewImg = document.getElementById('previewImg');
         const previewText = document.getElementById('previewText');
-
+        
         fotoInput.onchange = evt => {
             const [file] = fotoInput.files;
             if (file) {
@@ -145,7 +146,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 previewText.classList.add('hidden');
             }
         }
-    </script>
-
+        </script>
 </body>
 </html>

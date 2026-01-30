@@ -46,7 +46,7 @@ if (isset($_GET['hapus'])) {
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Kelola Kuliner - Admin SumateraJalan</title>
 </head>
-<body class="bg-slate-50 pb-20">
+<body class="bg-slate-50">
     <?php include '../includes/admin_nav.php'; ?>
 
     <main class="container mx-auto px-4 md:px-6">
@@ -136,11 +136,9 @@ if (isset($_GET['hapus'])) {
             </div>
         <?php endif; ?>
 
-        <div class="mt-12 text-center border-t border-slate-200 pt-8">
-            <p class="text-[9px] font-bold text-slate-400 uppercase tracking-[0.4em]">
-                Total Database Kuliner: <span class="text-slate-900"><?= count($kuliner) ?></span> Menu
-            </p>
-        </div>
+
     </main>
+    <?php include '../includes/footer.php'; ?>
+
 </body>
 </html>
